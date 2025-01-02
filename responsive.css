@@ -1,0 +1,162 @@
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+   /* Header Section */
+header{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.logo-container {
+    margin-bottom: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.brand-name {
+    font-size: 20px;
+}
+
+.navigation-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Introduction Section for index/homepage*/
+.intro-section {
+    padding: 20px 10px;
+}
+
+.intro-section h1 {
+    font-size: 22px;
+}
+
+.intro-section p {
+    font-size: 14px;
+}
+
+/* Promotion Section for index/homepage*/
+.promo-section {
+    flex-direction: column;
+}
+
+.promo-text h2 {
+    font-size: 20px;
+}
+
+.promo-image img {
+    height: 200px;
+}
+
+/* Review Section */
+.reviews {
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-card {
+    width: 90%; /* Take almost full width of the screen on smaller devices */
+}
+
+.reviews-container h2 {
+    font-size: 24px; /* Slightly smaller font for headings */
+}
+
+.review-text {
+    font-size: 15px; /* Adjust text size for readability */
+}
+
+/* Footer Section */
+footer {
+    padding: 15px 10px;
+}
+
+.footer h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.social-media {
+    gap: 10px;
+}
+
+.social-media a {
+    width: 30px;
+    height: 30px;
+}
+
+/* Menu Section CSS for menu page*/
+.menu-list {
+    grid-template-columns: 1fr; /* 1 item per row on phones */
+}
+
+.menu-section h2 {
+    font-size: 22px;
+}
+
+.menu-category h3 {
+    font-size: 18px;
+}
+
+.menu-item img {
+    height: 150px;
+}
+
+.footer h3 {
+    font-size: 14px;
+}
+
+.social-media a {
+    width: 25px;
+    height: 25px;
+}
+
+/* Cart Section */
+#cart-modal {
+    width: 95%;
+}
+
+/* about us CSS */
+.store-info p, .history-text p {
+    font-size: 16px;
+}
+
+.footer h3 {
+    font-size: 14px;
+}
+
+.social-media a {
+    width: 25px;
+    height: 25px;
+}
+
+/*Contact Us CSS*/
+.contact-list h2,
+.map-section h2,
+.form-section h2 {
+    font-size: 22px;
+}
+
+form input,
+form textarea {
+    font-size: 14px;
+}
+
+form button {
+    font-size: 16px;
+}
+
+.map {
+    height: 250px;
+}
+}

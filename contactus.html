@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="javascript.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /*Header CSS*/
+        header {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            padding: 10px;
+            justify-content: space-between;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 110px;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+        }
+        .intro{
+            color: white;
+        }
+
+        .navigation-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .nav-item:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Contact Us Content */
+        .contact-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Contact List Section */
+        .contact-list {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-list h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .contact-list p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact-list span {
+            font-weight: bold;
+            color: brown;
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .map-section h2 {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .map {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        /* Form Section */
+        .form-section {
+            background-color: #c98e48;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .form-section h2 {
+            margin-bottom: 15px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Button CSS */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #c98e48;
+            color: white;
+            border: none;
+            border-radius: 20%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 18px;
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        /*Footer Section CSS*/
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        footer h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-media a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 30%;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .credit-description {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 15px;
+        }
+    </style>
+    <title>Contact Us</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div>
+                <img src="donmaclogo.jpg" class="dmlogo" alt="logo">
+            </div>
+            <div class="brand-name">Don Macchiatos</div><br>
+        </div>
+
+        <div class="navigation-container">
+            <div><a href="index.html" class="nav-item" id="current">Home</a></div>
+            <div><a href="menu.html" class="nav-item">Menu</a></div>
+            <div><a href="about.html" class="nav-item">About Us</a></div>
+            <div><a href="contactus.html" class="nav-item">Contact Us</a></div>
+        </div>
+    </header>
+
+    <!-- Contact Page Content -->
+    <div class="contact-container">
+        <!-- Contact List Section -->
+        <div class="contact-list">
+            <h2>Contact Information</h2>
+            <p><span>Phone Number:</span> 0945 892 4643 (Bataan Branch)</p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <h2>Manila - Legarda Branch</h2>
+            <div class="map">
+                <!-- Embedded Map -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1930.4795954174194!2d120.99046357472994!3d14.601400627265328!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9000382c24d%3A0xeebf16cb4a3238ff!2sDon%20Macchiatos%20Manila-Legarda!5e0!3m2!1sen!2sph!4v1735343807913!5m2!1sen!2sph" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <h2>Bataan Branch</h2>
+            <div class="map">
+                <!-- Embedded Map -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5721558751848!2d120.53408987362387!3d14.680205175125714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396410017cb7157%3A0x57f9fb540efb747c!2sDon%20Macchiatos%20Bataan!5e0!3m2!1sen!2sph!4v1735344347360!5m2!1sen!2sph" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="form-section">
+            <h2>Feedback / Suggestion Box</h2>
+            <form action="#" method="POST">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="scrollToTop" class="scroll-to-top">↑ Top</button>
+    
+    <footer>
+        <h3>FOLLOW US</h3>
+        <div class="social-media">
+            <a href="https://www.facebook.com/donmacchiatosphilippines" target="_blank">
+                <img src="Facebooklogo.png" alt="Facebook Logo">
+            </a>
+            <a href="https://x.com/DonMacTaguig" target="_blank">
+                <img src="xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.instagram.com/donmacchiatos.official/" target="_blank">
+                <img src="Instagramlogo.png" alt="Instagram Logo">
+            </a>
+        </div>
+        <div class="credit-description">
+            <p>Credits to the Owner of the Contents above, This is a Sample Website only.</p>
+        </div>
+    </footer>
+</body>
+</html>

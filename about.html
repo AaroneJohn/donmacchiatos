@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="javascript.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*Header CSS*/
+        header {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            padding: 10px;
+            justify-content: space-between;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 110px;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+        }
+        .intro{
+            color: white;
+        }
+
+        .navigation-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .nav-item:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* About Page Content */
+         .about-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /* Store Info Section */
+        .store-info {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .store-info h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .store-info p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .store-info span {
+            font-weight: bold;
+            color: brown;
+        }
+
+        /* History Section */
+        .history-section {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            gap: 20px;
+        }
+
+        .history-text {
+            flex: 1;
+        }
+
+        .history-text h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .history-text p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .history-image {
+            flex: 1;
+        }
+
+        .history-image img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Button CSS */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #c98e48;
+            color: white;
+            border: none;
+            border-radius: 20%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 18px;
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+        
+        /*Footer Section CSS*/
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        footer h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-media a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 30%;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .credit-description {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 15px;
+        }
+    </style>
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div>
+                <img src="donmaclogo.jpg" class="dmlogo" alt="logo">
+            </div>
+            <div class="brand-name">Don Macchiatos</div><br>
+        </div>
+
+        <div class="navigation-container">
+            <div><a href="index.html" class="nav-item" id="current">Home</a></div>
+            <div><a href="menu.html" class="nav-item">Menu</a></div>
+            <div><a href="about.html" class="nav-item">About Us</a></div>
+            <div><a href="contactus.html" class="nav-item">Contact Us</a></div>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <div class="about-container">
+        <!-- Store Info Section -->
+        <div class="store-info">
+            <h2>Store Information</h2>
+            <p><span>Opening Time:</span> 9:00 AM</p>
+            <p><span>Closing Time:</span> 9:00 PM</p>
+            <p><span>Contact for Inquiries:</span> 0945 892 4643 (Bataan Branch)</p>
+        </div>
+    
+        <!-- Shop History Section -->
+        <div class="history-section">
+            <div class="history-text">
+                <h2>Don Macchiatos: Cebu's 1st 39 Pesos Coffee</h2>
+                <p>
+                    <b>Nickie San Juan</b> is one of the owners of Don Macchiatos from Pinamungahan, Cebu. They started one ordinary Tuesday in <b>October 2022</b> without expecting that Cebuanos will embrace their new business venture. She worked as a call-center agent but stopped during the pandemic when she became a mother. Together with her partner, they also manage <b>Pure Leaf Milktea</b>—their first business which also bloomed during the pandemic. Their hunger for success made them more eager to look for new ventures and better opportunities. Nic-nic, as she is fondly called, shared, that during her pregnancy she really enjoyed sipping coffee. Her partner also shared the same interest. They thought that while they were enjoying more cups of coffee every day, they already had spent much for it. So why spend much for other brands when they can create their own? Hence, <b>Don Macchiatos</b> was born. They started their coffee training and had discovered affordable suppliers. It’s called Don Macchiatos because their main product offering is <b>Iced Caramel Macchiato</b>.
+                </p>
+            </div>
+            <div class="history-image">
+                <img src="donmacaboutpic.jpg" alt="Shop Image">
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollToTop" class="scroll-to-top">↑ Top</button>
+
+    <footer>
+        <h3>FOLLOW US</h3>
+        <div class="social-media">
+            <a href="https://www.facebook.com/donmacchiatosphilippines" target="_blank">
+                <img src="Facebooklogo.png" alt="Facebook Logo">
+            </a>
+            <a href="https://x.com/DonMacTaguig" target="_blank">
+                <img src="xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.instagram.com/donmacchiatos.official/" target="_blank">
+                <img src="Instagramlogo.png" alt="Instagram Logo">
+            </a>
+        </div>
+        <div class="credit-description">
+            <p>Credits to the Owner of the Contents above, This is a Sample Website only.</p>
+        </div>
+    </footer>
+</body>
+</html>

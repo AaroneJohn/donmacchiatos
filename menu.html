@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="javascript.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*Header CSS*/
+        header {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            padding: 10px;
+            justify-content: space-between;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 110px;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+        }
+        .intro{
+            color: white;
+        }
+
+        .navigation-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .nav-item:hover {
+            background-color: white;
+            color: black;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* Menu Section */
+        .menu-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            margin-bottom: 15px;
+            font-size: 36px;
+        }
+
+        .menu-section h3 {
+            font-size: 24px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .menu-category {
+            margin-bottom: 10px;
+        }
+
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.03);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .menu-item:hover .menu-description {
+            opacity: 1;
+        }
+
+        .menu-description p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #c98e48;
+            color: white;
+        }
+        .scroll-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #c98e48;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1000;
+            display: none; /* Hidden by default */
+        }
+
+        .scroll-btn:hover {
+            background-color: #8e6532;
+        }
+
+
+        /* Cart Modal */
+        #cart-section {
+            margin-top: 20px;
+            padding: 20px;
+            border-top: 2px solid black;
+            background-color: #c98e48;
+        }
+
+        #cart-items-container .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .remove-item{
+            padding: 5px;
+            border-radius: 10%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: black;
+            color: white;
+            transition: 0.7s ease;
+            border: 1px solid black;
+        }
+        .remove-item:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid white;
+        }
+
+        #cart-section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .cart-footer {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        #checkout {
+            padding: 10px;
+            border-radius: 10%;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            transition: 0.4s ease;
+        }
+
+        #checkout:hover {
+            background-color: white;
+            border: 1px solid white;
+            color: black;
+
+        }
+
+        /*Footer Section CSS*/
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        footer h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-media a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 30%;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .credit-description {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 15px;
+        }
+    </style>
+    <title>Menu</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div>
+                <img src="donmaclogo.jpg" class="dmlogo" alt="logo">
+            </div>
+            <div class="brand-name">Don Macchiatos</div><br>
+        </div>
+
+        <div class="navigation-container">
+            <div><a href="index.html" class="nav-item">Home</a></div>
+            <div><a href="menu.html" class="nav-item" id="current">Menu</a></div>
+            <div><a href="about.html" class="nav-item">About Us</a></div>
+            <div><a href="contactus.html" class="nav-item">Contact Us</a></div>
+        </div>
+    </header>
+
+    <section class="menu-section">
+        <h2>MENU</h2>
+        <h3>New Flavors: Ube Series</h3>
+
+        <div class="menu-list" id="newflavor">
+            <div class="menu-item">
+                <img src="newflavor1.jpg" alt="Special 1">
+                <div class="menu-description">
+                    <h4>UBE WITH MATCHA</h4>
+                    <p>A unique fusion of earthy matcha and sweet, creamy ube.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Ube with matcha" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="newflavor2.jpg" alt="Special 2">
+                <div class="menu-description">
+                    <h4>PURE UBE</h4>
+                    <p>A creamy and indulgent drink that highlights the rich, sweet flavor of ube.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Pure ube" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="newflavor3.jpg" alt="Special 2">
+                <div class="menu-description">
+                    <h4>UBE WITH COFFEE</h4>
+                    <p>A delightful blend of rich coffee and sweet, creamy ube.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Ube with coffee" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-category">
+        <h3>BEST SELLERS</h3>
+        <div class="menu-list">
+            <div class="menu-item">
+                <img src="bestseller1.jpg" alt="Best Seller 1">
+                <div class="menu-description">
+                    <h4>ICED CARAMEL MACCHIATOS</h4>
+                    <p>A classic combination of rich coffee, creamy milk, and a touch of sweet caramell all at a wallet-friendly price.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Iced caramel macchiatos" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="bestseller2.jpg" alt="Best Seller 2">
+                <div class="menu-description">
+                    <h4>DON DARKO</h4>
+                    <p>Premium Dark Chocolate, for dark chocolate lovers</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Don darko" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="bestseller3.jpg" alt="Best Seller 2">
+                <div class="menu-description">
+                    <h4>DON MATCHATOS</h4>
+                    <p>A smooth matcha latte or a bold blend of matcha and coffee</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Don matchatos" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-category">
+        <h3>SUMMER DRINKS</h3>
+        <div class="menu-list">
+            <div class="menu-item">
+                <img src="summer1.jpg" alt="Regular 1">
+                <div class="menu-description">
+                    <h4>DONYA BERRY</h4>
+                    <p>A delightful mix of creamy milk and sweet strawberry syrup.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Donya berry" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="summer2.jpg" alt="Regular 2">
+                <div class="menu-description">
+                    <h4>BLACK FOREST</h4>
+                    <p>A rich and decadent combination of dark chocolate layers, creamy milk, and a luscious berry mix.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Black forest" data-price="39">Add to Cart</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="summer3.jpg" alt="Regular 2">
+                <div class="menu-description">
+                    <h4>MATCHA BERRY</h4>
+                    <p>A layered combination of green matcha, creamy white milk, and a rich berry mix at the bottom.</p>
+                    <p>Price: ₱39.00</p>
+                    <a href="#" class="add-to-cart" data-name="Matcha berry" data-price="39">Add to Cart</a>
+                </div>
+            </div>    
+        </div>
+
+        <div class="menu-category">
+            <h3>HOT COFFEE</h3>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <img src="hotcoffee1.jpg" alt="Regular 1">
+                    <div class="menu-description">
+                        <h4>Don Barako</h4>
+                        <p>Enough sweet to blend the rich aroma Infused from the roasted robusta and arabica seeds with a pleasant aftertaste.</p>
+                        <p>Price: ₱39.00</p>
+                        <a href="#" class="add-to-cart" data-name="Don barako" data-price="39">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="hotcoffee2.jpg" alt="Regular 2">
+                    <div class="menu-description">
+                        <h4>Hot Caramel</h4>
+                        <p>A velvety coffee indulgence featuring quite creamy milk, perfect blend of sweetness and a generous drizzle of luscious caramel syrup.</p>
+                        <p>Price: ₱39.00</p>
+                        <a href="#" class="add-to-cart" data-name="Hot caramel" data-price="39">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="hotcoffee3.jpg" alt="Regular 2">
+                    <div class="menu-description">
+                        <h4>Hot Darko</h4>
+                        <p>A coffee mixed with Dark Chocolate, crafted for coffee enthusiasts who crave deep, robust flavors.</p>
+                        <p>Price: ₱39.00</p>
+                        <a href="#" class="add-to-cart" data-name="Hot darko" data-price="39">Add to Cart</a>
+                    </div>
+                </div>    
+            </div>
+        
+    </div>
+    </section>
+
+    <button id="scroll-to-cart" class="scroll-btn">Go to Cart</button>
+
+    <!-- Cart Section -->
+    <section id="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items-container">
+            <p>Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <p>Total: ₱<span id="cart-total">0.00</span></p>
+            <button id="checkout">Checkout</button>
+        </div>
+    </section>
+
+    <footer>
+        <h3>FOLLOW US</h3>
+        <div class="social-media">
+            <a href="https://www.facebook.com/donmacchiatosphilippines" target="_blank">
+                <img src="Facebooklogo.png" alt="Facebook Logo">
+            </a>
+            <a href="https://x.com/DonMacTaguig" target="_blank">
+                <img src="xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.instagram.com/donmacchiatos.official/" target="_blank">
+                <img src="Instagramlogo.png" alt="Instagram Logo">
+            </a>
+        </div>
+        <div class="credit-description">
+            <p>Credits to the Owner of the Contents above, This is a Sample Website only.</p>
+        </div>
+    </footer>
+</body>
+</html>
